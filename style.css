@@ -1,0 +1,98 @@
+@charset "UTF-8";
+    html {
+        font-size: 100%;
+    }
+    .wrapper {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    ul {
+        list-style: none;
+    }
+    h2 {
+        font-size: 2rem;
+        font-weight: normal;
+        margin-top: 30px;
+        padding: 50px 0;
+        
+    }
+    #ac-menu li {
+        border-top: 1px solid #000;
+    }
+    #ac-menu li:last-child {
+        border-bottom: 1px solid #000;
+    }
+
+    .label {
+        cursor: pointer;
+        font-size: 1.125rem;
+        font-weight: bold;
+        padding: 40px 30px;
+        position: relative;
+        transition: .5s;
+    }
+    #ac-menu .label:hover {
+        background-color: #ffda5f;
+    }
+    #ac-menu .label::before,
+    #ac-menu .label::after {
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: #000;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+    }
+    #ac-menu .label::after {
+        transform: translateY(-50%) rotate(90deg);
+        transition: 0.5s;
+    }
+    #ac-menu .label.open {
+        background-color: #ffda5f;
+    }
+    #ac-menu .label.open::before {
+        opacity: 0;
+    }
+    #ac-menu .label.open::after {
+        transform: rotate(180deg);
+    }
+    #ac-menu .detall {
+        border-top: 1px solid #ccc;
+        padding: 35px 30px;
+        display: none;
+    }
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    dl dt {
+        width: 20%;
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+    dl dd{
+        width: 80%;
+        margin-bottom: 40px;
+    }
+    @media screen and (max-width: 600px) {
+        #ac-menu .label {
+            padding: 40px 0;
+        }
+        #ac-menu .detail {
+            padding: 35px 0;
+        }
+        #ac-menu .detail dl {
+            flex-direction: column;
+        }
+        #ac-menu .detail dt {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        #ac-menu .detail dd {
+            width: 100%;
+            padding-left: 10px;
+        }
+    }
